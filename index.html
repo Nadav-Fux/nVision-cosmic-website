@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="nVision - מסע קוסמי דיגיטלי אינטראקטיבי עם 11 עולמות תלת-ממדיים" />
+  <meta name="keywords" content="nVision, קוסמוס, דיגיטלי, תלת-ממד, אנימציה, Three.js" />
+  <title>nVision - מסע קוסמי דיגיטלי</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+      <div class="loading-content">
+        <div class="cosmic-loader"></div>
+        <h2 data-translate="loading">טוען מסע קוסמי...</h2>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="cosmic-header">
+      <div class="header-content">
+        <h1 class="logo" data-translate="logo">nVision קוסמוס</h1>
+        <div class="header-controls">
+          <button id="languageToggle" class="control-btn" data-translate="language-toggle">EN</button>
+          <button id="themeToggle" class="control-btn" data-translate="theme-toggle">☀️</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="cosmic-journey">
+      <!-- Scene 1: Hero Launchpad -->
+      <section id="hero" class="cosmic-scene active">
+        <canvas id="heroCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="hero-title">רמפת השיגור הקוסמית</h2>
+          <h3 class="scene-subtitle" data-translate="hero-subtitle">מסע אל העתיד הדיגיטלי</h3>
+          <p class="scene-description" data-translate="hero-description">ברוכים הבאים למסע קוסמי דיגיטלי מרהיב. חקרו 11 עולמות אינטראקטיביים, גלו טכנולוגיות מתקדמות וחוו חדשנות בממדים חדשים.</p>
+          <button class="interactive-btn" onclick="navigateToScene('services')" data-translate="hero-cta">התחל מסע</button>
+        </div>
+      </section>
+
+      <!-- Scene 2: Services Core Reactor -->
+      <section id="services" class="cosmic-scene">
+        <canvas id="servicesCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="services-title">הכור המרכזי - שירותים</h2>
+          <h3 class="scene-subtitle" data-translate="services-subtitle">מקור האנרגיה הדיגיטלית</h3>
+          <p class="scene-description" data-translate="services-description">גלו את מגוון השירותים המתקדמים שלנו. כל שירות הוא כוכב לכת הנע במסלול מושלם סביב הכור המרכזי של החדשנות והמצוינות.</p>
+          <button class="interactive-btn" onclick="navigateToScene('portfolio')" data-translate="services-cta">חקור שירותים</button>
+        </div>
+      </section>
+
+      <!-- Scene 3: Portfolio Wormhole -->
+      <section id="portfolio" class="cosmic-scene">
+        <canvas id="portfolioCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="portfolio-title">חור התולעת - תיק עבודות</h2>
+          <h3 class="scene-subtitle" data-translate="portfolio-subtitle">מעבר בין ממדי הפרויקטים</h3>
+          <p class="scene-description" data-translate="portfolio-description">עברו דרך חור התולעת הקוסמי וגלו את הפרויקטים המרהיבים שיצרנו. כל פרויקט הוא ממד נפרד של יצירתיות וחדשנות טכנולוגית.</p>
+          <button class="interactive-btn" onclick="navigateToScene('ai')" data-translate="portfolio-cta">חקור פרויקטים</button>
+        </div>
+      </section>
+
+      <!-- Scene 4: AI Nebula -->
+      <section id="ai" class="cosmic-scene">
+        <canvas id="aiCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="ai-title">ערפילית הבינה המלאכותית</h2>
+          <h3 class="scene-subtitle" data-translate="ai-subtitle">מוח דיגיטלי קוסמי</h3>
+          <p class="scene-description" data-translate="ai-description">גלו את כוח הבינה המלאכותית המתקדמת שלנו. כמו ערפילית קוסמית יוצרת כוכבים חדשים, הטכנולוגיות שלנו יוצרות פתרונות חכמים ומהפכניים.</p>
+          <button class="interactive-btn" onclick="navigateToScene('blockchain')" data-translate="ai-cta">חקור AI</button>
+        </div>
+      </section>
+
+      <!-- Scene 5: Blockchain Galaxy -->
+      <section id="blockchain" class="cosmic-scene">
+        <canvas id="blockchainCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="blockchain-title">גלקסיית הבלוקצ'יין</h2>
+          <h3 class="scene-subtitle" data-translate="blockchain-subtitle">רשת אמון אינסופית</h3>
+          <p class="scene-description" data-translate="blockchain-description">נסעו דרך גלקסיית הבלוקצ'יין, שם כל בלוק הוא כוכב המחובר ברשת אמון בלתי ניתנת לשבירה. טכנולוגיה מבוזרת היוצרת עתיד בטוח ושקוף.</p>
+          <button class="interactive-btn" onclick="navigateToScene('cloud')" data-translate="blockchain-cta">חקור בלוקצ'יין</button>
+        </div>
+      </section>
+
+      <!-- Scene 6: Cloud Constellation -->
+      <section id="cloud" class="cosmic-scene">
+        <canvas id="cloudCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="cloud-title">קבוצת כוכבי הענן</h2>
+          <h3 class="scene-subtitle" data-translate="cloud-subtitle">תשתית דיגיטלית אינסופית</h3>
+          <p class="scene-description" data-translate="cloud-description">עלו אל קבוצת כוכבי הענן הדיגיטלי, שם המידע זורם בחופשיות בין כוכבי הלכת. פתרונות ענן מתקדמים המספקים גמישות וביצועים ללא גבולות.</p>
+          <button class="interactive-btn" onclick="navigateToScene('mobile')" data-translate="cloud-cta">חקור ענן</button>
+        </div>
+      </section>
+
+      <!-- Scene 7: Mobile Orbit -->
+      <section id="mobile" class="cosmic-scene">
+        <canvas id="mobileCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="mobile-title">מסלול הנייד</h2>
+          <h3 class="scene-subtitle" data-translate="mobile-subtitle">חוויות בכף היד</h3>
+          <p class="scene-description" data-translate="mobile-description">הצטרפו למסלול הנייד, שם אפליקציות מתקדמות מקיפות את כדור הארץ הדיגיטלי. פתרונות מובייל חדשניים המביאים את העתיד לכף היד שלכם.</p>
+          <button class="interactive-btn" onclick="navigateToScene('web')" data-translate="mobile-cta">חקור מובייל</button>
+        </div>
+      </section>
+
+      <!-- Scene 8: Web Universe -->
+      <section id="web" class="cosmic-scene">
+        <canvas id="webCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="web-title">יקום הרשת</h2>
+          <h3 class="scene-subtitle" data-translate="web-subtitle">חוויות דיגיטליות אינסופיות</h3>
+          <p class="scene-description" data-translate="web-description">חקרו את יקום הרשת האינסופי, שם אתרים ואפליקציות רשת יוצרים גלקסיות של חוויות דיגיטליות. טכנולוגיות רשת מתקדמות המחברות עולמות.</p>
+          <button class="interactive-btn" onclick="navigateToScene('security')" data-translate="web-cta">חקור רשת</button>
+        </div>
+      </section>
+
+      <!-- Scene 9: Security Shield -->
+      <section id="security" class="cosmic-scene">
+        <canvas id="securityCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="security-title">מגן האבטחה הקוסמי</h2>
+          <h3 class="scene-subtitle" data-translate="security-subtitle">הגנה דיגיטלית מתקדמת</h3>
+          <p class="scene-description" data-translate="security-description">היכנסו למגן האבטחה הקוסמי, שם שכבות הגנה מתקדמות מגינות על הנכסים הדיגיטליים. פתרונות אבטחה חדשניים המבטיחים שלמות ופרטיות מוחלטת.</p>
+          <button class="interactive-btn" onclick="navigateToScene('data')" data-translate="security-cta">חקור אבטחה</button>
+        </div>
+      </section>
+
+      <!-- Scene 10: Data Dimension -->
+      <section id="data" class="cosmic-scene">
+        <canvas id="dataCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="data-title">ממד הנתונים</h2>
+          <h3 class="scene-subtitle" data-translate="data-subtitle">אינטליגנציה מידע מתקדמת</h3>
+          <p class="scene-description" data-translate="data-description">גלו את ממד הנתונים, שם מידע גולמי הופך לתובנות יקרות ערך. טכנולוגיות ניתוח נתונים מתקדמות החושפות דפוסים נסתרים ביקום הדיגיטלי.</p>
+          <button class="interactive-btn" onclick="navigateToScene('contact')" data-translate="data-cta">חקור נתונים</button>
+        </div>
+      </section>
+
+      <!-- Scene 11: Contact Portal -->
+      <section id="contact" class="cosmic-scene">
+        <canvas id="contactCanvas" class="scene-canvas"></canvas>
+        <div class="scene-content">
+          <h2 class="scene-title" data-translate="contact-title">פורטל התקשורת</h2>
+          <h3 class="scene-subtitle" data-translate="contact-subtitle">שער לעתיד הדיגיטלי</h3>
+          <p class="scene-description" data-translate="contact-description">הגעתם לפורטל התקשורת הקוסמי. כאן מתחיל המסע האמיתי שלכם אל העתיד הדיגיטלי. צרו קשר ובואו נבנה יחד את החזון הטכנולוגי שלכם.</p>
+          <button class="interactive-btn" onclick="navigateToScene('hero')" data-translate="contact-cta">צור קשר</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Achievement Notifications -->
+    <div id="achievementContainer" class="achievement-container"></div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
